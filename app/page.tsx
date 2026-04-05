@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { getDefaults } from "@/lib/defaults";
 
 export default function LandingPage() {
+	getDefaults();
+
 	return (
 		// 1. The outermost wrapper: full height flex column, but NOT center-justified
 		<div className="min-h-screen bg-slate-50 flex flex-col">

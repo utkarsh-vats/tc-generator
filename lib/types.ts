@@ -20,6 +20,7 @@ export interface SchoolInfo {
 	schoolPhone?: string;
 	schoolEmail?: string;
 	schoolLogoUrl?: string;
+	schoolSubtitle?: string;
 };
 
 export interface CertificateMeta {
@@ -61,7 +62,6 @@ export interface StudentInfo {
 	residentialAddress?: string;
 	gender?: GenderType;
 	result?: ResultType;
-	schoolSubtitle?: string;
 };
 
 export interface TCData {
