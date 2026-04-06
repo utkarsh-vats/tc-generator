@@ -52,7 +52,7 @@ export interface StudentInfo {
 	nccScoutGuide?: string;
 	gamesAndExtracurricular?: string;
 	generalConduct: string;
-	dateOfApplication: string;
+	dateOfApplication?: string;
 	dateOfIssueOnCert: string;
 	reasonForLeaving?: string;
 	otherRemarks?: string;
