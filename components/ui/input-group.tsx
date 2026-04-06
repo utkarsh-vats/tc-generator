@@ -18,7 +18,7 @@ export function InputGroup(props: InputGroupProps) {
 				</span>
 			</label>
 			<input
-				className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+				className="w-full h-10 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 				type={props.type || "text"}
 				style={{ borderColor: props.error ? "#b91c1c" : undefined }}
 				value={props.value}

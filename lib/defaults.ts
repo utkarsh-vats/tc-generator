@@ -7,6 +7,7 @@ export function getDefaults(): TCData {
     // console.log(date);
 
     const defaultSchoolInfo: SchoolInfo = {
+        schoolID: "",
         schoolName: "",
         schoolAddress: "",
         boardAffiliation: "CBSE",

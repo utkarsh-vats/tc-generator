@@ -18,7 +18,7 @@ export function SelectGroup(props: SelectGroupProps) {
 				</span>
 			</label>
 			<select
-				className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+				className="w-full h-10 px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 				style={{ borderColor: props.error ? "#b91c1c" : undefined }}
 				value={props.value}
 				onChange={(e) => props.onChange(e.target.value)}

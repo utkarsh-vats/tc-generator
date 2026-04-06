@@ -13,7 +13,9 @@ export type CasteCategoryType = typeof CASTE_CATEGORIES[number];
 export const PRINTED_PARENT = ["Father", "Mother", "Guardian"] as const;
 export type PrintedParentType = typeof PRINTED_PARENT[number];
 
+
 export interface SchoolInfo {
+	schoolID: string;
 	schoolName: string;
 	schoolAddress: string;
 	boardAffiliation: BoardType;
@@ -25,6 +27,8 @@ export interface SchoolInfo {
 	schoolLogoUrl?: string;
 	schoolSubtitle?: string;
 };
+
+export type SavedSchools = SchoolInfo[];
 
 export interface CertificateMeta {
 	tcSerialNumber: string;
