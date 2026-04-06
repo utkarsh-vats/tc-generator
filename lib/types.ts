@@ -10,6 +10,9 @@ export type ResultType = typeof RESULTS[number];
 export const CASTE_CATEGORIES = ["General", "OBC", "SC", "ST", "Other"] as const;
 export type CasteCategoryType = typeof CASTE_CATEGORIES[number];
 
+export const PRINTED_PARENT = ["Father", "Mother", "Guardian"] as const;
+export type PrintedParentType = typeof PRINTED_PARENT[number];
+
 export interface SchoolInfo {
 	schoolName: string;
 	schoolAddress: string;
@@ -56,6 +59,8 @@ export interface StudentInfo {
 	dateOfIssueOnCert: string;
 	reasonForLeaving?: string;
 	otherRemarks?: string;
+
+	printedParent?: PrintedParentType;
 
 	// fields for SLC template
 	session?: string;

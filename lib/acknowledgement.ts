@@ -5,8 +5,19 @@ export function generateAcknowledgement(data: TCData): string {
     const { student } = data;
 
     const pronoun = student.gender === "Female" ? "She" : "He";
-    const honorific = student.gender === "Female" ? "Smt." : "Shri.";
     const childOf = student.gender === "Female" ? "D/o" : "S/o";
+
+    const printedParent = student.printedParent || "Father";
+    let parentName = student.fatherName;
+    let honorific = "Shri.";
+
+    if (printedParent === "Mother") {
+        parentName = student.motherName;
+        honorific = "Smt.";
+    } else if (printedParent === "Guardian") {
+        parentName = student.guardianName || "";
+        honorific = "";
+    }
 
     const admDate = formatDateIndian(student.dateOfFirstAdmission);
     const leaveDate = formatDateIndian(student.dateOfLeaving);
@@ -16,7 +27,7 @@ export function generateAcknowledgement(data: TCData): string {
 
     return [
         `Certified that ${student.studentName || "____"} ${childOf} ${honorific}`,
-        `${student.fatherName || "____"} had been studying in`,
+        `${parentName || "____"} had been studying in`,
         `Class ${student.classAtLeaving || "____"} of this school since ${admDate || "____"} to`,
         `${leaveDate || "____"}.`,
         `${pronoun} had paid all dues/sums to this school.`,

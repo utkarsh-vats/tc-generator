@@ -51,6 +51,8 @@ export function getDefaults(): TCData {
         reasonForLeaving: "",
         otherRemarks: "",
 
+        printedParent: "Father",
+
         // fields for SLC template
         session: "",
         residentialAddress: "",
