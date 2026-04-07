@@ -33,44 +33,44 @@ export type SavedSchools = SchoolInfo[];
 export interface CertificateMeta {
 	tcSerialNumber: string;
 	bookNumber: string;
-	admissionNumber: string;
-	dateOfIssue: string;
+	admissionNumber: string;	//
+	dateOfIssue: string;	//
 };
 
 export interface StudentInfo {
-	studentName: string;
-	fatherName: string;
-	motherName: string;
-	guardianName?: string;
-	nationality: string;
-	religion: string;
-	casteCategory: CasteCategoryType;
-	otherCasteCategory?: string;
-	dateOfBirth: string;
-	dateOfBirthInWords: string;
-	dateOfFirstAdmission: string;
-	classOfFirstAdmission: string;
-	dateOfLeaving: string;
-	classAtLeaving: string;
-	allDuesPaid: boolean; // "Yes" | "No"
-	qualifiedForPromotion: boolean; // "Yes" | "No"
-	totalWorkingDays: number | null;
-	totalDaysPresent: number | null;
-	nccScoutGuide?: string;
-	gamesAndExtracurricular?: string;
-	generalConduct: string;
-	dateOfApplication?: string;
-	dateOfIssueOnCert: string;
-	reasonForLeaving?: string;
-	otherRemarks?: string;
+	studentName: string;	//
+	fatherName: string;		//
+	motherName: string;		//
+	guardianName?: string;	//
+	nationality: string;	//
+	religion: string;		//
+	casteCategory: CasteCategoryType;	//
+	otherCasteCategory?: string;	//
+	dateOfBirth: string;	//
+	dateOfBirthInWords: string;	// **
+	dateOfFirstAdmission: string;	//
+	classOfFirstAdmission?: string;	//
+	dateOfLeaving: string;	//
+	classAtLeaving: string;	//
+	allDuesPaid: boolean; // "Yes" | "No"	//
+	qualifiedForPromotion: boolean; // "Yes" | "No"	//
+	totalWorkingDays: number | null;	//
+	totalDaysPresent: number | null;	//
+	nccScoutGuide?: string;	//
+	gamesAndExtracurricular?: string;	//
+	generalConduct: string;	//
+	dateOfApplication?: string;	//
+	dateOfIssueOnCert: string;	//
+	reasonForLeaving?: string;	//
+	otherRemarks?: string;		//
 
 	printedParent?: PrintedParentType;
 
 	// fields for SLC template
-	session?: string;
-	residentialAddress?: string;
-	gender?: GenderType;
-	result?: ResultType;
+	session?: string;	//
+	residentialAddress?: string;	//
+	gender?: GenderType;	//
+	result?: ResultType;	//
 };
 
 export interface TCData {
