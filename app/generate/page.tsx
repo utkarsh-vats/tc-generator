@@ -4,18 +4,14 @@ import { InputGroup } from "@/components/ui/input-group";
 import { SelectGroup } from "@/components/ui/select-group";
 import { getDefaults } from "@/lib/defaults";
 import { saveSchoolInfo, loadSavedSchools, SavedSchools } from "@/lib/storage";
+import { generateAcknowledgement } from "@/lib/acknowledgement";
 import {
 	TCData,
 	BOARDS,
-	BoardType,
 	CASTE_CATEGORIES,
-	CasteCategoryType,
 	GENDERS,
-	GenderType,
 	RESULTS,
-	ResultType,
 	PRINTED_PARENT,
-	PrintedParentType,
 } from "@/lib/types";
 
 const GenerateTCPage = () => {
@@ -88,11 +84,11 @@ const GenerateTCPage = () => {
 	};
 
 	return (
-		<div className="min-h-screen flex bg-slate-50 relative">
+		<div className="min-h-screen flex flex-col lg:flex-row bg-slate-100 relative">
 			{/* Left Section */}
-			<section className="w-5/12 h-screen overflow-y-auto border-r border-slate-200 bg-slate-100 p-4 text-slate-800">
+			<section className="w-full lg:w-5/12 xl:w-2/5 h-auto lg:h-screen bg-slate-50 lg:overflow-y-auto lg:border-r px-4 pt-4 pb-4 sm:px-6 sm:pt-6 lg:px-8 lg:pt-8 lg:pb-4 text-slate-800">
 				<div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
-					<div className="flex justify-between items-center mb-6">
+					<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
 						<h1 className="text-2xl font-bold text-slate-800">
 							Generate TC
 						</h1>
@@ -403,11 +399,38 @@ const GenerateTCPage = () => {
 						/>
 					</div>
 				</div>
+				<div className="bg-white rounded-xl shadow-lg border border-slate-200 p-4 sticky bottom-4 z-10 flex justify-between items-center mt-2">
+					<button
+						onClick={() =>
+							setTcData((prev) => ({
+								...prev,
+								student: getDefaults().student,
+								meta: getDefaults().meta,
+							}))
+						}
+						className="text-sm font-bold text-slate-500 hover:text-red-600 px-4 py-2 rounded-md transition-colors"
+					>
+						Clear Data
+					</button>
+					<button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-8 rounded-lg shadow-sm transition-colors">
+						Preview TC ✨
+					</button>
+				</div>
 			</section>
 			{/* Right Section */}
-			<section className="w-7/12 h-screen bg-slate-200 overflow-y-auto border-r p-8 text-slate-800">
-				{/*  */}
+			<section className="w-full lg:w-7/12 xl:w-3/5 h-auto lg:h-screen bg-slate-200 lg:overflow-y-auto p-4 sm:p-8 text-slate-800 flex flex-col items-center">
+				<div className="bg-white w-full max-w-xl aspect-[1/1.414] shadow-2xl p-8 sm:p-12 flex flex-col border border-slate-200 rounded-sm">
+					<h1 className="text-2xl font-bold text-center mb-8 uppercase underline tracking-wider">
+						Transfer Certificate Preview
+					</h1>
+
+					{/* The Live Data Stream */}
+					<div className="text-lg leading-loose text-justify font-serif">
+						{generateAcknowledgement(tcData)}
+					</div>
+				</div>
 			</section>
+
 			{showSchoolModal && (
 				<div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
 					<div className="bg-white rounded-xl shadow-2xl p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto flex flex-col">
