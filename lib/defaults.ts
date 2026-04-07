@@ -1,3 +1,5 @@
+// /lib/defaults.ts
+
 import { TCData, SchoolInfo, CertificateMeta, StudentInfo } from "./types";
 
 export function getDefaults(): TCData {

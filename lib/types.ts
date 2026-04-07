@@ -1,3 +1,5 @@
+// /lib/types.ts
+
 export const BOARDS = ["CBSE", "ICSE", "UP Board", "Other"] as const;
 export type BoardType = typeof BOARDS[number];
 

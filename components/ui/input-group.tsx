@@ -1,3 +1,5 @@
+// /components/ui/input-group.tsx
+
 export interface InputGroupProps {
 	label: string;
 	value: string | number;

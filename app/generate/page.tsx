@@ -1,3 +1,5 @@
+// /app/generate/page.tsx
+
 "use client";
 import { useState, useEffect } from "react";
 import { InputGroup } from "@/components/ui/input-group";

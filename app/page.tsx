@@ -1,3 +1,5 @@
+// /app/page.tsx
+
 import Link from "next/link";
 import { getDefaults } from "@/lib/defaults";
 

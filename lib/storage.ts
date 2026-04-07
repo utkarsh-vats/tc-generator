@@ -1,7 +1,4 @@
-// 1. We need to save / load the TCData object to the browser's localStorage under the key "tc-generator-form".
-// 2. Use JSON.stringify() to save, and JSON.parse() to load.
-// 3. Write two exported functions: saveFormData(data: TCData) and loadFormData(): TCData | null.
-// 4. Wrap your localStorage calls in if (typeof window !== "undefined") { ... } so Next.js doesn't crash on the server.
+// /lib/storage.ts
 
 import { TCData } from "./types";
 
